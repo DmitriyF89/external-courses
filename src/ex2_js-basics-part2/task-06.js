@@ -1,8 +1,8 @@
 module.exports = checkPrime;
 
 function checkPrime (num) {
-	let isPrime = true;
-	let result;
+	let isPrime, result;
+	isPrime = true;
 
 	if (num > 1 && num <= 1000) {
 

@@ -1,9 +1,9 @@
 module.exports = checkArrayValues;
 
 function checkArrayValues (arr) {
-	let evenElements = 0;
-	let oddElements = 0;
-	let zeroElements = 0;
+	let evenElements, oddElements, zeroElements;
+	evenElements = oddElements = zeroElements = 0;
+	const result = [];
 
 	arr
 		.filter(item => typeof item === 'number')
@@ -17,7 +17,6 @@ function checkArrayValues (arr) {
 			}
 		});
 
-	const result = [];
 	result.push(evenElements);
 	result.push(oddElements);
 	result.push(zeroElements);
