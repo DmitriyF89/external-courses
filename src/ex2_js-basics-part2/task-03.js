@@ -1,24 +1,17 @@
 function checkArrayValues (arr) {
-	let evenElements, oddElements, zeroElements;
-	evenElements = oddElements = zeroElements = 0;
-	const result = [];
+	const result = [0, 0, 0];
 
-	arr
-		.filter(item => typeof item === 'number')
-		.forEach(item => {
-			if (item === 0) {
-				zeroElements++;
-			} else if (item % 2 === 0) {
-				evenElements++;
+	for (let i = 0; i < arr.length; i++) {
+		if (typeof arr[i] === 'number') {
+			if (arr[i] === 0) {
+				result[2] += 1;
+			} else if (arr[i] % 2 === 0) {
+				result[0] += 1;
 			} else {
-				oddElements++;
+				result[1] += 1;
 			}
-		});
-
-	result.push(evenElements);
-	result.push(oddElements);
-	result.push(zeroElements);
-
+		}
+	}
 	return result;
 }
 

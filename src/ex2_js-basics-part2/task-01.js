@@ -1,5 +1,4 @@
 function getValue (value) {
-
 	if (typeof value === 'number') {
 		return 'number';
 	} else if (typeof value === 'string') {

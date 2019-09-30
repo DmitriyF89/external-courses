@@ -6,7 +6,6 @@ function getMaxValue (arr) {
 			maxValue = item;
 		}
 	}
-
 	return maxValue;
 }
 

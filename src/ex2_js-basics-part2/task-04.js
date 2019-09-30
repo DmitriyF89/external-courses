@@ -7,7 +7,6 @@ function checkEquality (arr) {
 			isEqual = false;
 		}
 	}
-
 	return isEqual;
 }
 
