@@ -1,7 +1,5 @@
-module.exports = getValue;
-
 function getValue (value) {
-	
+
 	if (typeof value === 'number') {
 		return 'number';
 	} else if (typeof value === 'string') {
@@ -9,3 +7,5 @@ function getValue (value) {
 	}
 	return undefined;
 }
+
+module.exports = getValue;

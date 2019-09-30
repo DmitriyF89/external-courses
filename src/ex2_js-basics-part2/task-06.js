@@ -1,5 +1,3 @@
-module.exports = checkPrime;
-
 function checkPrime (num) {
 	let isPrime, result;
 	isPrime = true;
@@ -20,3 +18,5 @@ function checkPrime (num) {
 	}
 	return result;
 }
+
+module.exports = checkPrime;

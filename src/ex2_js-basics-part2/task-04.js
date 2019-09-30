@@ -1,5 +1,3 @@
-module.exports = checkEquality;
-
 function checkEquality (arr) {
 	let isEqual = true;
 	const reference = arr[0];
@@ -12,3 +10,5 @@ function checkEquality (arr) {
 
 	return isEqual;
 }
+
+module.exports = checkEquality;

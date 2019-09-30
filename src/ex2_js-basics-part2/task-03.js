@@ -1,5 +1,3 @@
-module.exports = checkArrayValues;
-
 function checkArrayValues (arr) {
 	let evenElements, oddElements, zeroElements;
 	evenElements = oddElements = zeroElements = 0;
@@ -23,3 +21,5 @@ function checkArrayValues (arr) {
 
 	return result;
 }
+
+module.exports = checkArrayValues;

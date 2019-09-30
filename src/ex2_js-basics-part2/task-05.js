@@ -1,5 +1,3 @@
-module.exports = getMaxValue;
-
 function getMaxValue (arr) {
 	let maxValue = 0;
 
@@ -11,3 +9,5 @@ function getMaxValue (arr) {
 
 	return maxValue;
 }
+
+module.exports = getMaxValue;
