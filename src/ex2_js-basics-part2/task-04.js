@@ -1,4 +1,4 @@
-function checkEquality (arr) {
+function checkEqual (arr) {
 	let isEqual = true;
 	const reference = arr[0];
 
@@ -10,4 +10,4 @@ function checkEquality (arr) {
 	return isEqual;
 }
 
-module.exports = checkEquality;
+module.exports = checkEqual;

@@ -1,4 +1,4 @@
-function getMaxValue (arr) {
+function getMaxVal (arr) {
 	let maxValue = 0;
 
 	for (let item of arr) {
@@ -9,4 +9,4 @@ function getMaxValue (arr) {
 	return maxValue;
 }
 
-module.exports = getMaxValue;
+module.exports = getMaxVal;

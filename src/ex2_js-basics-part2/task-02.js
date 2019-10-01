@@ -1,8 +1,8 @@
-function observeArray (arr) {
+function observeArr (arr) {
 	for (let item of arr) {
 		console.log(item);
 	}
 	console.log(`Number of items is ${arr.length}`);
 }
 
-module.exports = observeArray;
+module.exports = observeArr;

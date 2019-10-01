@@ -4,7 +4,6 @@ function getValue (value) {
 	} else if (typeof value === 'string') {
 		return 'string';
 	}
-	
 	return undefined;
 }
 

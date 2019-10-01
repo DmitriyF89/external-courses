@@ -1,4 +1,4 @@
-function checkArrayValues (arr) {
+function checkArrValues (arr) {
 	const result = [0, 0, 0];
 
 	for (let i = 0; i < arr.length; i++) {
@@ -15,4 +15,4 @@ function checkArrayValues (arr) {
 	return result;
 }
 
-module.exports = checkArrayValues;
+module.exports = checkArrValues;
