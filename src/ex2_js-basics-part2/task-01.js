@@ -1,4 +1,4 @@
-function getValue (value) {
+function getVal (value) {
 	if (typeof value === 'number') {
 		return 'number';
 	} else if (typeof value === 'string') {
@@ -7,4 +7,4 @@ function getValue (value) {
 	return undefined;
 }
 
-module.exports = getValue;
+module.exports = getVal;
