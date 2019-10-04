@@ -1,11 +1,11 @@
 function cutWhiteSpaces(str) {
   let result = str;
 
-  if (str[0] === ' ') {
+  if (result[0] === ' ') {
     result = result.slice(1);
   }
-  if (str[str.length - 1] === ' ') {
-    result = result.slice(0, str.length - 2);
+  if (result[result.length - 1] === ' ') {
+    result = result.slice(0, result.length - 1);
   }
   return result;
 };
