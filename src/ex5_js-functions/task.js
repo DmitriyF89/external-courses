@@ -1,24 +1,24 @@
-const Calculator = {
+const calculator = {
   state: 0,
 
   add(num = 0) {
     state += num;
-    return Calculator.add;
+    return calculator.add;
   },
 
   subtract(num = 0) {
     state -= num;
-    return Calculator.subtract;
+    return calculator.subtract;
   },
 
   divide(num = 1) {
     state /= num;
-    return Calculator.divide;
+    return calculator.divide;
   },
 
   multiply(num = 0) {
     state *= num;
-    return Calculator.multiply;
+    return calculator.multiply;
   },
 
   getResult() {
@@ -30,4 +30,4 @@ const Calculator = {
   }
 }
 
-module.exports = Calculator;
+module.exports = calculator;
