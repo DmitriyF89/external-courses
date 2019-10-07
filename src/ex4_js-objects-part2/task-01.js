@@ -1,5 +1,8 @@
 function findPropInProto(prop, obj) {
-  return obj.__proto__[prop];
+  if (!obj.hasOwnProperty(prop)) {
+    return obj[prop];
+  }
+  return undefined;
 }
 
 module.exports = findPropInProto;

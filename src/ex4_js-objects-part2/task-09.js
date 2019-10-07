@@ -1,7 +1,7 @@
 function addWordToString(destStr, addStr, pos) {
-  const words = destStr.split(' ');
-  const firstPart = [];
-  const lastPart = [];
+  const words = destStr.split(' '),
+    firstPart = [],
+    lastPart = [];
 
   for (let i = 0; i <= pos; i++) {
     firstPart.push(words[i]);
