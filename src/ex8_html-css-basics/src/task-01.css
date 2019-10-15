@@ -1,0 +1,27 @@
+.container {
+  background-color: #30dd99;
+}
+
+.wrapper {
+  width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+  margin-bottom: 15px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin-bottom: 15px;
+}
+
+td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+img {
+  width: 320px;
+  height: auto;
+  margin-bottom: 15px;
+}
