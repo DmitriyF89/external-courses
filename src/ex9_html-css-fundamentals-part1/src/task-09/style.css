@@ -1,0 +1,73 @@
+body {
+  padding: 30px;
+}
+
+/* FLEX DECISION*****************************************************/
+
+.flex-decision {
+  margin-bottom: 30px;
+}
+
+.flex-decision .main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-decision header {
+  background: lightblue;
+  flex-basis: 100%;
+}
+.flex-decision .section {
+  box-sizing: border-box;
+  background: lightgreen;
+  flex-basis: 75%;
+}
+.flex-decision article {
+  background: white;
+  margin: 0 0 1rem 0;
+}
+.flex-decision aside {
+  background: pink;
+  flex-basis: 25%;
+  box-sizing: border-box;
+}
+
+header, article, .section, .module {
+  padding: 1rem;
+}
+
+/* GRID DECISION*****************************************************/
+
+.grid-decision .main {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-areas:
+     "header header header header"
+     "section section section aside"
+}
+
+.grid-decision header {
+  background: lightblue;
+  grid-area: header;
+}
+
+.grid-decision .section {
+  grid-area: section;
+  background: lightgreen;
+  box-sizing: border-box;
+}
+
+.grid-decision article {
+  background: white;
+  margin: 0 0 1rem 0;
+}
+
+.grid-decision aside {
+  grid-area: aside;
+  background: pink;
+  box-sizing: border-box;
+}
+
+header, article, .section, .module {
+  padding: 1rem;
+}
