@@ -19,9 +19,9 @@ body {
 .masked-image img{
   max-width: 500px;
   height: auto;
-  -webkit-mask-image: url(../img/mask-image.png);
+  -webkit-mask-image: url(./src/task-01/img/mask-image.png);
   -webkit-mask-size: 290px auto;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center center;
-  mask-image: url(../img/mask-image.png);
+  mask-image: url(./src/task-01/img/mask-image.png);
 }
