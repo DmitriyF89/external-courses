@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  font-size: 16px;
+}
+
+.inputs {
+  width: 450px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 25px;
+}
+
+.item {
+  position: relative;
+  padding-top: 10px;
+}
+
+.item input {
+  padding: 10px;
+  width: 100%;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.item label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: .75rem;
+  font-weight: bold;
+  transition: all .2s linear;
+  color: grey;
+}
+
+.item input:invalid + label {
+  opacity: 0;
+}
+
+.item input:valid + label {
+  top: 5px;
+  opacity: 1;
+}
+
+.item input:focus + label {
+  color: rgb(25, 39, 233);
+}
+
+.item__title,
+.item__description {
+  flex-basis: 100%;
+}
+
+
+.item__price {
+  flex-basis: 25%;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+.item__location {
+  flex-basis: 74%;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+

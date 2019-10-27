@@ -1,0 +1,36 @@
+@import './task-03/normalize.css';
+@import './task-03/sidebar/sidebar.css';
+@import './task-03/footer/footer.css';
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(./task-03/fonts/Roboto-Regular.ttf);
+}
+
+html {
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 21px;
+}
+
+body {
+  padding-top: 25px;
+}
+
+.mainContent {
+  max-width: 1152px;
+  background-color:#0079bf;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #cbcbcb;
+}
+
