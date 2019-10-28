@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto/Roboto-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Roboto';
+  font-size: 16px;
+  background-image: url(../task-04/img/bg.jpg);
+  background-size: cover;
+}
+
+body, p, h1, h3, h3, h4, h5, h6, table, figure, ul {
+  margin: 0;
+  padding: 0;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.container {
+  flex-grow: 1;
+}
+
+.header, .main-wrapper, .footer {
+  max-width: 1240px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 20px 20px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #a30000;
+  color: #ffe7b0;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.nav {
+  display: flex;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-style: italic;
+  align-items: stretch;
+}
+
+.nav ul {
+  box-sizing: border-box;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav ul li {
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.nav ul li:hover {
+  color: #0a023d;
+}
+
+.main-wrapper {
+  display: flex;
+}
+
+.main {
+  background-color: rgb(255,231,176);
+  flex-basis: 70%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.main h1 {
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.section {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #0a023d;
+}
+
+.section h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.section1 {
+  width: 600pt;
+  height: 50mm;
+  overflow: hidden;
+}
+
+.section2 {
+  width: 85%;
+  box-sizing: border-box;
+}
+
+.side-bar {
+  flex-basis: 30%;
+  background-image: url(../task-04/img/bgadv.jpg);
+}
+
+.advertisement {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgb(255,231,176);
+  background-color: #0a023d;
+  background-size: contain;
+  margin: 0 auto;
+  margin: 2%;
+  border: 2px solid rgb(255,231,176);
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.advertisement h4 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.advertisement p {
+  font-size: 0.8em;
+  text-align: justify;
+}
+
+.footer {
+  padding: 25px;
+  background-color: #a30000;
+}
+
+.footer p{
+  text-align: center;
+}
