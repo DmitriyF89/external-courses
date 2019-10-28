@@ -10,7 +10,25 @@
 </head>
 
 <body>
-  <header class="header"></header>
+  <header class="header">
+    <div class="header__intro">
+      <div class="header__logo">
+        <img src="./task-03/header/svg/logo.svg" alt="logo">
+      </div>
+      <h2 class="header__heading">Awesome kanban board</h2>
+    </div>
+    <div class="header__userMenu">
+      <button class="header__newListButton">
+        <img src="./task-03/header/svg/new-list-button.svg" alt="new list">
+        Create new list</button>
+      <div class="header__logIn">
+        <img src="./task-03/header/svg/avatar.svg" alt="avatar">
+        <button class="arrowDown">
+          <img src="./task-03/header/svg/arrow-down.svg" alt="arrowDown">
+        </button>
+      </div>
+    </div>
+  </header>
   <div class="mainContent">
     <aside class="sidebar">
       <div class="sidebar__status">
@@ -30,11 +48,7 @@
           <li class="sidebar__item">Shop page - performance issues</li>
         </ul>
         <button class="sidebar__addCard">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M13 6H8V1C8 0.448 7.552 0 7 0C6.448 0 6 0.448 6 1V6H1C0.448 6 0 6.448 0 7C0 7.552 0.448 8 1 8H6V13C6 13.552 6.448 14 7 14C7.552 14 8 13.552 8 13V8H13C13.552 8 14 7.552 14 7C14 6.448 13.552 6 13 6Z"
-              fill="#5E6C84" />
-          </svg>
+          <img src="/task-03/sidebar/svg/plus.svg" alt="+">
           Add card
         </button>
       </div>
@@ -46,7 +60,7 @@
       <p class="footer__text">Finished tasks: <span>&lt;M&gt;</span></p>
     </div>
     <div class="author">
-      <p class="footer__text">Kanban board by <span>&lt;Name&gt;</span>,<span>&lt;Year&gt;</span></p>
+      <p class="footer__text">Kanban board by <span>&lt;Name&gt;</span>, <span>&lt;Year&gt;</span></p>
     </div>
   </footer>
 </body>

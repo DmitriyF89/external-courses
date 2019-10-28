@@ -1,6 +1,7 @@
 @import './task-03/normalize.css';
 @import './task-03/sidebar/sidebar.css';
 @import './task-03/footer/footer.css';
+@import './task-03/header/header.css';
 
 @font-face {
   font-family: 'Roboto';
@@ -15,6 +16,11 @@ html {
 
 body {
   padding-top: 25px;
+}
+
+h1, h2, h3, h4, h5, h6, img {
+  margin: 0;
+  padding: 0;
 }
 
 .mainContent {

@@ -1,5 +1,6 @@
 .footer {
   max-width: 1152px;
+  height: 57px;
   background-color: #0067a3;
   display: flex;
   justify-content: space-between;
@@ -13,6 +14,11 @@
 
 .tasksInfo {
   display: flex;
+}
+
+.footer__text {
+  margin: 0;
+  padding: 0;
 }
 
 .footer__text:first-child {
