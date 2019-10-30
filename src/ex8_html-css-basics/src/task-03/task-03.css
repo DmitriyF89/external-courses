@@ -1,0 +1,64 @@
+.container {
+  width: 400px;
+  margin: 0 auto;
+  background: #63f;
+  padding: 10px;
+  position: relative;
+}
+
+.container .div-item {
+  width: 250px;
+  height: 150px;
+  background-color: #dff;
+  margin: 20px auto;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1000;
+}
+
+.div1 {
+  border: 5px solid black;
+}
+
+.div2 {
+  outline: 5px solid greenyellow;
+}
+
+.div3 {
+  box-shadow: 0 0 0 5px red;
+}
+
+#div4 {
+  width: 250px;
+  height: 150px;
+  background: url(./bg.png) repeat-y 100% 0,
+              url(./bg.png) repeat-y 0% 0,
+              url(./bg.png) repeat-x 100% 0,
+              url(./bg.png) repeat-x 0% 100%,
+              #dff;
+  padding: 5px;
+  margin: 0 auto;
+  position: relative;
+  top: 5px;
+}
+
+.container .div5 {
+  background: darkmagenta;
+  position: relative;
+  height: 140px;
+  width: 240px;
+  margin: 20px auto;
+  box-sizing: content-box;
+  padding: 5px;
+}
+
+
+.div5::before {
+  content: '';
+  width: 240px;
+  height: 140px;
+  background: rgba(255,255,225,0.3);
+  position: absolute;
+  bottom: 5px; 
+  right: 5px;
+}
