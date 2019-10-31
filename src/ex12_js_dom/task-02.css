@@ -1,0 +1,47 @@
+@import './src/task-02/normalize.css';
+@import './src/task-02/sidebar/sidebar.css';
+@import './src/task-02/footer/footer.css';
+@import './src/task-02/header/header.css';
+@import './src/task-02/userAcc/userAcc.css';
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(./src/task-02/fonts/Roboto-Regular.ttf);
+}
+
+html {
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 21px;
+}
+
+body {
+  padding-top: 25px;
+}
+
+h1, h2, h3, h4, h5, h6, img {
+  margin: 0;
+  padding: 0;
+}
+
+.kanban {
+  position: relative;
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+.mainContent {
+  background-color:#0079bf;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #cbcbcb;
+}

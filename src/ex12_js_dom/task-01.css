@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: orange;
+  background-image: url(./src/task-01/img/bg.jpg);
+  background-size: cover;
+  padding-top: 50px;
+}
+
+h1 {
+  font-weight: normal;
+  margin: 20px 0;
+  font-size: 40px;
+}
+
+.slider {
+  position: relative;
+  border: 5px solid orange;
+  width: 920px;
+  height: 620px;
+  overflow: hidden;
+}
+
+.slider__item {
+  position: absolute;
+  left: 0px;
+  opacity: 0;
+  transition: all ease 1s ;
+}
+
+.slider__item.visible {
+  left: 0px;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.slider__item img {
+  width: 920px;
+  height: 620px;
+}
+
+.slider__item.visible {
+  display: block;
+}
+
+.slider__button {
+  background: gray;
+  border: none;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 620px;
+  opacity: .2;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.slider__button:hover,
+.slider__button:focus {
+  opacity: .7;
+}
+
+.slider__button img {
+  width: 80px;
+  height: auto;
+  opacity: 1;
+}
+
+.slider__button_prevBtn img {
+  transform: scale(-1, 1);
+}
+
+.slider__button_nextBtn {
+  right: 0;
+}

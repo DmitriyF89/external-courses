@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="task-02.css">
+  <title>Task-02</title>
+</head>
+
+<body>
+  <div class="kanban">
+    <header class="header">
+      <div class="header__intro">
+        <div class="header__logo">
+          <img src="./src/task-02/header/svg/logo.svg" alt="logo" tabindex="0">
+        </div>
+        <h2 class="header__heading">Awesome kanban board</h2>
+      </div>
+      <div class="header__userMenu">
+        <button class="header__newListButton">
+          <img src="./src/task-02/header/svg/new-list-button.svg" alt="new list">
+          Create new list</button>
+        <div class="header__logIn">
+          <img src="./src/task-02/header/svg/avatar.svg" alt="avatar">
+          <button class="arrowDown">
+            <img src="./src/task-02/header/svg/arrow-down.svg" alt="arrowDown">
+          </button>
+        </div>
+        <div class="userAcc__wrapper">
+          <div class="userAcc">
+            <img class="userAcc__avatar" src="./src/task-02/userAcc/svg/avatar.svg" alt="avatar">
+            <div class="userAcc__info">
+              <p class="userAcc__nickname">User name</p>
+              <p class="userAcc__email">User email</p>
+            </div>
+            <button class="userAcc__accountSettings">Account settings</button>
+            <button class="userAcc__logout">Log out</button>
+            <a href="#" class="userAcc__terms">Terms of use</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="mainContent">
+      <aside class="sidebar">
+        <div class="sidebar__status">
+          <h3 class="sidebar__name">Ready</h3>
+          <button class="sidebar__statusButton">•••</button>
+        </div>
+        <div class="sidebar__items">
+          <ul class="sidebar__list">
+            <li class="sidebar__item">Shop page – performance issues</li>
+            <li class="sidebar__item">Checkout bugfix</li>
+            <li class="sidebar__item">Shop bug1</li>
+            <li class="sidebar__item">Shop bug2</li>
+            <li class="sidebar__item">Shop bug3</li>
+            <li class="sidebar__item">Shop bug4</li>
+            <li class="sidebar__item">Shop bug5</li>
+            <li class="sidebar__item">Shop bug6</li>
+            <li class="sidebar__item">Shop page - performance issues</li>
+          </ul>
+          <button class="sidebar__addCard">
+            <img src="./src/task-02/sidebar/svg/plus.svg" alt="+">
+            Add card
+          </button>
+        </div>
+      </aside>
+    </div>
+    <footer class="footer">
+      <div class="tasksInfo">
+        <p class="footer__text">Active tasks: <span>&lt;N&gt;</span></p>
+        <p class="footer__text">Finished tasks: <span>&lt;M&gt;</span></p>
+      </div>
+      <div class="author">
+        <p class="footer__text">Kanban board by <span>&lt;Name&gt;</span>, <span>&lt;Year&gt;</span></p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="task-02.js"></script>
+</body>
+
+</html>
