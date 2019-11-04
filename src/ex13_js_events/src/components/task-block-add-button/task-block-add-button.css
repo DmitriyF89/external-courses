@@ -1,0 +1,30 @@
+.taskBlock__addCard {
+  color: #5e6c84;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 21px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.taskBlock__addCard:not(.disabled):hover {
+  font-size: 1.1rem;
+}
+
+.disabled {
+  cursor: default;
+  color: #5e6c8471;
+  outline: none;
+}
+
+.disabled .taskBlock__plusImg{
+  fill: #5e6c8471;
+}
+
+.taskBlock__plusImg {
+  fill: #5e6c84;
+}

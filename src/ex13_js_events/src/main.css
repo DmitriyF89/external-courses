@@ -1,0 +1,61 @@
+@import './normalize.css';
+@import './components/task-block/task-block.css';
+@import './components/task-block-task/task-block-task.css';
+@import './components/task-block-title/task-block-title.css';
+@import './components/task-block-add-button/task-block-add-button.css';
+@import './components/task-block-task-list/task-block-task-list.css';
+@import './components/footer/footer.css';
+@import './components/header/header.css';
+@import './components/user-acc/user-acc.css';
+@import './components/task-block-input/task-block-input.css';
+@import './components/task-block-select/task-block-select.css';
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(./fonts/Roboto-Regular.ttf);
+}
+
+html {
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 21px;
+}
+
+body {
+  padding-top: 25px;
+}
+
+h1, h2, h3, h4, h5, h6, img {
+  margin: 0;
+  padding: 0;
+}
+
+.kanban {
+  position: relative;
+  width: 1152px;
+  margin: 0 auto;
+}
+
+.container {
+  overflow-x: auto;
+  background-color:#0079bf;
+  padding-right: 24px;
+}
+
+.mainContent {
+  padding: 0;
+  margin: 24px 24px 0 24px;
+  min-height: 570px;
+  box-sizing: border-box;
+  display: inline-flex;
+  width: 1176px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #cbcbcb;
+}
