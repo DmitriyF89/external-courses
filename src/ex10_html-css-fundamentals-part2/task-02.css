@@ -1,0 +1,9 @@
+label, option, 
+[type="range"],
+[type="submit"],
+[type="reset"],
+[type="radio"],
+[type="checkbox"],
+[type="file"] {
+  cursor: pointer;
+}

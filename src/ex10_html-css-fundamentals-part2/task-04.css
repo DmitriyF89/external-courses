@@ -1,4 +1,4 @@
-@import './src/task-04/css/normalize.css';
+@import './task-04-normalize.css';
 
 body {
   font-size: 16px;
@@ -155,9 +155,10 @@ li a {
   align-items: center;
   margin-bottom: 33px;
   margin-top: 39px;
+  list-style: none;
 }
 
-.contactIcons > div {
+.contactIcons > li {
   margin: 22px;
 }
 
@@ -166,11 +167,34 @@ li a {
   position:  relative;
 }
 
+.contactIcons__button{
+  background: none;
+  border: none;
+}
+
+.contactIcons__phone svg,
+.contactIcons__place svg,
+.contactIcons__mail svg {
+  width: 26px;
+  cursor: pointer;
+}
+
+.contactIcons__phone svg:hover,
+.contactIcons__place svg:hover,
+.contactIcons__mail svg:hover {
+  fill: #1faae2;
+}
+
 .contactIcons__popup {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, -110%);
+  visibility: hidden;
+}
+
+.contactIcons__place .contactIcons__button:hover + .contactIcons__popup {
+  visibility: visible;
 }
 
 .popup__text {
@@ -347,19 +371,19 @@ li a {
 
 /** SCROLL BAR******************************************************/
 
-.scrollbar {
+.slider {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   position: relative;
 }
 
-.scrollbar__button {
+.slider__button {
   background-color: #fff;
   margin-right: 100px;
 }
 
-.scrollbar__button button {
+.slider__button button {
   background-color: #f4f4f4;
   width: 100px;
   height: 241px;
@@ -367,24 +391,24 @@ li a {
   cursor: pointer;
 }
 
-.scrollbar__item {
+.slider__item {
   position: relative;
 }
 
-.scrollbar__likes {
+.slider__likes {
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
-.scrollbar__likes p {
+.slider__likes p {
   position: absolute;
   top: 50%;
   left: 182px;
   transform: translate(-50%, -50%);
 }
 
-.scrollbar__like_orange {
+.slider__like_orange {
   color: #cc9800;
 }
 
@@ -492,7 +516,7 @@ li a {
     height: auto;
   }
   
-  .contactIcons, .scrollbar {
+  .contactIcons, .slider {
     display: none;
   }
 

@@ -12,13 +12,11 @@ body {
 
 .circled-image img {
   max-width: 500px;
-  height: auto;
   clip-path: circle(35% at 50% 50%);
 }
 
 .masked-image img{
   max-width: 500px;
-  height: auto;
   -webkit-mask-image: url(./src/task-01/img/mask-image.png);
   -webkit-mask-size: 290px auto;
   -webkit-mask-repeat: no-repeat;
