@@ -1,7 +1,4 @@
-@import './task-03/normalize.css';
-@import './task-03/sidebar/sidebar.css';
-@import './task-03/footer/footer.css';
-@import './task-03/header/header.css';
+@import './task-03-normalize.css';
 
 @font-face {
   font-family: 'Roboto';
@@ -18,7 +15,7 @@ body {
   padding-top: 25px;
 }
 
-h1, h2, h3, h4, h5, h6, img {
+h2, h3, img {
   margin: 0;
   padding: 0;
 }
@@ -40,3 +37,171 @@ h1, h2, h3, h4, h5, h6, img {
   background-color: #cbcbcb;
 }
 
+.header {
+  max-width: 1152px;
+  height: 55px;
+  margin: 0 auto;
+  background-color: #0067a3;
+  box-sizing: border-box;
+  color: #fff;
+  padding: 5px 6px 5px 14px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Roboto';
+}
+
+.header__intro {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  margin-right: 8px;
+  display: flex;
+}
+
+.header__heading {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 33px;
+  margin: 0;
+  padding: 0;
+}
+
+
+.header__userMenu {
+  display: flex;
+  align-items: center;
+}
+
+.header__newListButton {
+  width: 181px;
+  height: 33px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-right: 49px;
+}
+
+.header__logIn {
+  display: flex;
+  align-items: center;
+}
+
+.arrowDown {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header__newListButton {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.header__newListButton .header__newListImage {
+  margin-right: 13px;
+}
+
+.sidebar {
+  font-size: 1rem;
+  line-height: 21px;
+  font-family: 'Roboto';
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  max-width: 282px;
+  overflow: auto;
+  background: #ebecf0;
+  border-radius: 10px;
+  padding: 12px 0px 12px 8px;
+  box-sizing: border-box;
+  margin-right: 24px;
+}
+
+.sidebar__status {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.sidebar__name {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  width: 232px;
+}
+
+.sidebar__statusButton {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  line-height: 21px;
+  width: 20px;
+  height: 18px;
+  display: table-cell;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.sidebar__items {
+  max-height: 494px;
+  overflow: auto;
+  padding-right: 12px;
+}
+
+.sidebar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar__item {
+  margin-bottom: 15px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 7px 8px;
+  box-sizing: border-box;
+}
+
+.sidebar__addCard {
+  color: #5e6c84;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.footer {
+  max-width: 1152px;
+  height: 57px;
+  background-color: #0067a3;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 21px;
+  padding: 17px 24px 17px 67px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.tasksInfo {
+  display: flex;
+}
+
+.footer__text {
+  margin: 0;
+  padding: 0;
+}
+
+.footer__text:first-child {
+  margin-right: 36px;
+}
