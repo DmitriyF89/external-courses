@@ -20,7 +20,7 @@ h2, h3, img {
   padding: 0;
 }
 
-.mainContent {
+.main-content {
   max-width: 1152px;
   background-color:#0079bf;
   padding: 20px;
@@ -60,7 +60,7 @@ h2, h3, img {
   display: flex;
 }
 
-.header__heading {
+.header__title {
   font-style: normal;
   font-weight: normal;
   font-size: 28px;
@@ -69,13 +69,12 @@ h2, h3, img {
   padding: 0;
 }
 
-
-.header__userMenu {
+.header__user-menu {
   display: flex;
   align-items: center;
 }
 
-.header__newListButton {
+.new-list-button {
   width: 181px;
   height: 33px;
   background-color: #fff;
@@ -84,28 +83,28 @@ h2, h3, img {
   margin-right: 49px;
 }
 
-.header__logIn {
+.login {
   display: flex;
   align-items: center;
 }
 
-.arrowDown {
+.login__arrow-down {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.header__newListButton {
+.new-list-button {
   display: flex;
   cursor: pointer;
   align-items: center;
 }
 
-.header__newListButton .header__newListImage {
+.new-list-button .new-list-button__image {
   margin-right: 13px;
 }
 
-.sidebar {
+.task-block {
   font-size: 1rem;
   line-height: 21px;
   font-family: 'Roboto';
@@ -121,20 +120,20 @@ h2, h3, img {
   margin-right: 24px;
 }
 
-.sidebar__status {
+.task-block__title {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
 
-.sidebar__name {
+.task-block__name {
   margin: 0;
   padding: 0;
   font-weight: normal;
   width: 232px;
 }
 
-.sidebar__statusButton {
+.task-block__more-button {
   padding: 0;
   margin: 0;
   background: none;
@@ -149,19 +148,19 @@ h2, h3, img {
   margin-right: 12px;
 }
 
-.sidebar__items {
+.task-block__item-group {
   max-height: 494px;
   overflow: auto;
   padding-right: 12px;
 }
 
-.sidebar__list {
+.task-block__list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.sidebar__item {
+.task-block__item {
   margin-bottom: 15px;
   background: #fff;
   border-radius: 5px;
@@ -169,7 +168,7 @@ h2, h3, img {
   box-sizing: border-box;
 }
 
-.sidebar__addCard {
+.task-block__add-button {
   color: #5e6c84;
   background: none;
   border: none;
@@ -193,15 +192,16 @@ h2, h3, img {
   margin: 0 auto;
 }
 
-.tasksInfo {
+.task-info {
   display: flex;
 }
 
-.footer__text {
+.task-info__text,
+.author__text {
   margin: 0;
   padding: 0;
 }
 
-.footer__text:first-child {
+.task-info__text:first-child {
   margin-right: 36px;
 }

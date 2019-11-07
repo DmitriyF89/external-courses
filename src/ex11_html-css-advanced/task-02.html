@@ -9,22 +9,24 @@
 
 <body>
   <form action="POST">
-    <div class="inputs">
-      <div class="item item__title">
-        <input type="text" class="title" required placeholder="Title" id="title">
-        <label for="title">Title</label>
+    <div class="input-group">
+      <div class="item item-title">
+        <input type="text" class="item__input" required placeholder="Title" id="title">
+        <label for="title" class="item__label">Title</label>
       </div>
-      <div class="item item__price">
-        <input type="text" class="price" required placeholder="Price" id="price">
-        <label for="price">Price</label>
+      <div class="wrapper">
+        <div class="item item-price">
+          <input type="text" class="item__input" required placeholder="Price" id="price">
+          <label for="price" class="item__label">Price</label>
+        </div>
+        <div class="item item-location">
+          <input type="text" class="item__input" required placeholder="Specific location (optional)" id="location">
+          <label for="location" class="item__label">Location</label>
+        </div>
       </div>
-      <div class="item item__location">
-        <input type="text" class="location" required placeholder="Specific location (optional)" id="location">
-        <label for="location">Location</label>
-      </div>
-      <div class="item item__description">
-        <input type="text" class="description" required placeholder="Description" id="descr">
-        <label for="descr">Description</label>
+      <div class="item item-description">
+        <input type="text" class="item__input" required placeholder="Description" id="description">
+        <label for="description" class="item__label">Description</label>
       </div>
     </div>
   </form>

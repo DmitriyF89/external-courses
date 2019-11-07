@@ -15,52 +15,54 @@
       <div class="header__logo">
         <img src="./task-03/header/svg/logo.svg" alt="logo">
       </div>
-      <h2 class="header__heading">Awesome kanban board</h2>
+      <h2 class="header__title">Awesome kanban board</h2>
     </div>
-    <div class="header__userMenu">
-      <button class="header__newListButton">
-        <img src="./task-03/header/svg/new-list-button.svg" alt="new list" class="header__newListImage">
-        Create new list</button>
-      <div class="header__logIn">
+    <div class="header__user-menu">
+      <button class="new-list-button">
+        <img src="./task-03/header/svg/new-list-button.svg" alt="new list" class="new-list-button__image">
+        Create new list
+      </button>
+      <div class="login">
         <img src="./task-03/header/svg/avatar.svg" alt="avatar">
-        <button class="arrowDown">
+        <button class="login__arrow-down">
           <img src="./task-03/header/svg/arrow-down.svg" alt="arrowDown">
         </button>
       </div>
     </div>
   </header>
-  <div class="mainContent">
-    <aside class="sidebar">
-      <div class="sidebar__status">
-        <h3 class="sidebar__name">Ready</h3>
-        <button class="sidebar__statusButton">•••</button>
+  <div class="main-content">
+    <div class="task-block">
+      <div class="task-block__title">
+        <h3 class="task-block__name">Ready</h3>
+        <button class="task-block__more-button">•••</button>
       </div>
-      <div class="sidebar__items">
-        <ul class="sidebar__list">
-          <li class="sidebar__item">Shop page – performance issues</li>
-          <li class="sidebar__item">Checkout bugfix</li>
-          <li class="sidebar__item">Shop bug1</li>
-          <li class="sidebar__item">Shop bug2</li>
-          <li class="sidebar__item">Shop bug3</li>
-          <li class="sidebar__item">Shop bug4</li>
-          <li class="sidebar__item">Shop bug5</li>
-          <li class="sidebar__item">Shop bug6</li>
-          <li class="sidebar__item">Shop page - performance issues</li>
+      <div class="task-block__item-group">
+        <ul class="task-block__list">
+          <li class="task-block__item">Shop page – performance issues</li>
+          <li class="task-block__item">Checkout bugfix</li>
+          <li class="task-block__item">Shop bug1</li>
+          <li class="task-block__item">Shop bug2</li>
+          <li class="task-block__item">Shop bug3</li>
+          <li class="task-block__item">Shop bug4</li>
+          <li class="task-block__item">Shop bug5</li>
+          <li class="task-block__item">Shop bug6</li>
+          <li class="task-block__item">Shop page - performance issues</li>
         </ul>
-        <button class="sidebar__addCard">
-          <img src="./task-03/sidebar/svg/plus.svg" alt="+">
+        <button class="task-block__add-button">
+          <img src="./task-03/task-block/svg/plus.svg" alt="+">
           Add card
         </button>
       </div>
-    </aside>
+    </div>
   </div>
   <footer class="footer">
-    <div class="tasksInfo">
-      <p class="footer__text">Active tasks: <span>&lt;N&gt;</span></p>
-      <p class="footer__text">Finished tasks: <span>&lt;M&gt;</span></p>
+    <div class="task-info">
+      <p class="task-info__text">Active tasks: <span>&lt;N&gt;</span></p>
+      <p class="task-info__text">Finished tasks: <span>&lt;M&gt;</span></p>
     </div>
     <div class="author">
-      <p class="footer__text">Kanban board by <span>&lt;Name&gt;</span>, <span>&lt;Year&gt;</span></p>
+      <p class="author__text">Kanban board by <span>Fedorov Dmitry</span>, <span> 2019</span>
+      </p>
     </div>
   </footer>
 </body>

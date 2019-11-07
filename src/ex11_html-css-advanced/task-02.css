@@ -5,7 +5,7 @@ body {
   font-size: 16px;
 }
 
-.inputs {
+.input-group {
   width: 450px;
   margin: 0 auto;
   display: flex;
@@ -19,7 +19,7 @@ body {
   padding-top: 10px;
 }
 
-.item input {
+.item__input {
   padding: 10px;
   width: 100%;
   font-size: 1.25rem;
@@ -28,7 +28,7 @@ body {
   box-sizing: border-box;
 }
 
-.item label {
+.item__label {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -38,34 +38,39 @@ body {
   color: grey;
 }
 
-.item input:invalid + label {
+.item__input:invalid + .item__label {
   opacity: 0;
 }
 
-.item input:valid + label {
+.item__input:valid + .item__label {
   top: 5px;
   opacity: 1;
 }
 
-.item input:focus + label {
+.item__input:focus + .item__label {
   color: rgb(25, 39, 233);
 }
 
-.item__title,
-.item__description {
+.item-title,
+.item-description {
   flex-basis: 100%;
 }
 
-.item__price {
-  flex-basis: 25%;
+.wrapper {
+  display: flex;
+}
+
+.item-price {
+  flex-basis: 0;
+  flex-grow: 1;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   border-right: 1px solid grey;
 }
 
-.item__location {
-  flex-basis: 74%;
+.item-location {
+  flex-basis: 0;
+  flex-grow: 3;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
 }
-
