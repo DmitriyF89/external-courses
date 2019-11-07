@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./src/main.css">
+  <link rel="stylesheet" href="./src/css/main.css">
   <title>Kanban board</title>
 </head>
 
@@ -14,51 +14,37 @@
     <header class="header">
       <div class="header__intro">
         <div class="header__logo">
-          <img src="./src/components/header/svg/logo.svg" alt="logo">
+          <img src="./src/img/header/svg/logo.svg" alt="logo">
         </div>
-        <h2 class="header__heading">Awesome kanban board</h2>
+        <h2 class="header__title">Awesome kanban board</h2>
       </div>
-      <div class="header__userMenu">
-        <button class="header__newListButton">
-          <img src="./src/components/header/svg/new-list-button.svg" alt="new list">
-          Create new list</button>
-        <div class="header__logIn">
-          <img src="./src/components/header/svg/avatar.svg" alt="avatar">
-          <button class="arrowDown">
-            <img src="./src/components/header/svg/arrow-down.svg" alt="arrowDown">
-          </button>
-        </div>
-        <div class="userAcc__wrapper">
-          <div class="userAcc">
-            <img class="userAcc__avatar" src="./src/components/user-acc/svg/avatar.svg" alt="avatar">
-            <div class="userAcc__info">
-              <p class="userAcc__nickname">User name</p>
-              <p class="userAcc__email">User email</p>
-            </div>
-            <button class="userAcc__accountSettings">Account settings</button>
-            <button class="userAcc__logout">Log out</button>
-            <a href="#" class="userAcc__terms">Terms of use</a>
-          </div>
-        </div>
+      <div class="header__user-menu">
+        <button class="new-list-button">
+          <img src="./src/img/header/svg/new-list-button.svg" alt="new list" class="new-list-button__image">
+          Create new list
+        </button>
+        <button class="login">
+          <img src="./src/img/header/svg/avatar.svg" alt="avatar">
+          <img class="login__arrow-down" src="./src/img/header/svg/arrow-down.svg" alt="arrow down">
+        </button>
       </div>
     </header>
     <div class="container">
-      <div class="mainContent">
-      </div>
+      <div class="main-content"></div>
     </div>
     <footer class="footer">
-      <div class="tasksInfo">
-        <p class="footer__text">Active tasks: <span>&lt;N&gt;</span></p>
-        <p class="footer__text">Finished tasks: <span>&lt;M&gt;</span></p>
+      <div class="task-info">
+        <p class="task-info__text">Active tasks: <span>&lt;N&gt;</span></p>
+        <p class="task-info__text">Finished tasks: <span>&lt;M&gt;</span></p>
       </div>
       <div class="author">
-        <p class="footer__text">Kanban board by <span>&lt;Name&gt;</span>, <span>&lt;Year&gt;</span></p>
+        <p class="author__text">Kanban board by <span>Fedorov Dmitry</span>, <span> 2019</span>
+        </p>
       </div>
     </footer>
   </div>
 
-  <script src="./src/main.js"></script>
-
+  <script src="./src/js/main.js"></script>
 </body>
 
 </html>

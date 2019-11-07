@@ -1,12 +1,34 @@
 function treatUserAccPanel() {
   const
-    accountButton = document.querySelector('.header__logIn'),
-    userAcc = document.querySelector('.userAcc__wrapper'),
-    loginIconArrow = document.querySelector('.arrowDown img');
+    accountButton = document.querySelector('.login'),
+    loginIconArrow = document.querySelector('.login__arrow-down'),
+    mainMenu = document.querySelector('.main-content'),
+    userAccMenuTemplate = `
+  <div class="user-acc">
+    <img class="user-acc__avatar" src="./src/img/user-acc/svg/avatar.svg" alt="avatar">
+    <div class="user-acc__info">
+      <p class="user-acc__nickname">User name</p>
+      <p class="user-acc__email">User email</p>
+    </div>
+    <button class="user-acc__accountSettings">Account settings</button>
+    <button class="user-acc__logout">Log out</button>
+    <a href="#" class="user-acc__terms">Terms of use</a>
+  </div>
+  `;
+
+  let isUserAccActive = false;
 
   accountButton.addEventListener('click', function () {
-    userAcc.style.display = userAcc.style.display === 'block' ? 'none' : 'block';
-    loginIconArrow.classList.toggle('rotate180');
+    if (!isUserAccActive) {
+      mainMenu.insertAdjacentHTML('beforeend', userAccMenuTemplate);
+      isUserAccActive = true;
+      loginIconArrow.classList.toggle('rotate180');
+    } else {
+      const userAccMenu = document.querySelector('.user-acc');
+      userAccMenu.remove();
+      loginIconArrow.classList.toggle('rotate180');
+      isUserAccActive = false;
+    }
   });
 }
 
@@ -16,9 +38,9 @@ function createBlockTitle(name) {
     titleBlockName = document.createElement('h3'),
     titleButton = document.createElement('button');
 
-  titleBlock.classList.add('taskBlock__title');
-  titleBlockName.classList.add('taskBlock__name');
-  titleButton.classList.add('taskBlock__titleButton');
+  titleBlock.classList.add('task-block__title');
+  titleBlockName.classList.add('task-block__name');
+  titleButton.classList.add('task-block__more-button');
 
   titleBlockName.textContent = name;
   titleButton.textContent = '•••';
@@ -34,8 +56,8 @@ function createTaskList({ issues, title }) {
     list = document.createElement('ul'),
     listWrapper = document.createElement('div');
 
-  listWrapper.classList.add('taskBlock__items');
-  list.classList.add('taskBlock__list');
+  listWrapper.classList.add('task-block__item-group');
+  list.classList.add('task-block__list');
   listWrapper.append(list);
 
   if (issues.length) {
@@ -50,7 +72,7 @@ function createTaskList({ issues, title }) {
 
 function createTask(task) {
   const listItem = document.createElement('li');
-  listItem.classList.add('taskBlock__item');
+  listItem.classList.add('task-block__item');
   listItem.textContent = task.title;
   listItem.dataset.taskId = task.id;
   return listItem;
@@ -58,7 +80,7 @@ function createTask(task) {
 
 function createTaskBlock(element) {
   const taskBlock = document.createElement('div');
-  taskBlock.classList.add('taskBlock');
+  taskBlock.classList.add('task-block');
   taskBlock.append(createBlockTitle(element.title));
   taskBlock.append(createTaskList(element));
   return taskBlock;
@@ -67,13 +89,13 @@ function createTaskBlock(element) {
 function createTaskInput() {
   const taskInput = document.createElement('input');
   taskInput.type = 'text';
-  taskInput.classList.add('taskBlock__input');
+  taskInput.classList.add('task-block__input');
   return taskInput;
 }
 
 function createTaskSelect(options) {
   const select = document.createElement('select');
-  select.classList.add('taskBlock__select');
+  select.classList.add('task-block__select');
   select.append(document.createElement('option'));
 
   options.forEach(element => {
@@ -90,9 +112,9 @@ function creatAddButton(title) {
   const
     addButton = document.createElement('button');
 
-  addButton.classList.add('taskBlock__addCard');
+  addButton.classList.add('task-block__add-button');
   addButton.innerHTML =
-    `<svg class="taskBlock__plusImg" width="14" height="14" viewBox="0 0 14 14">
+    `<svg class="task-block__plus" width="14" height="14" viewBox="0 0 14 14">
     <path
       d="M13 6H8V1C8 0.448 7.552 0 7 0C6.448 0 6 0.448 6 1V6H1C0.448 6 0 6.448 0 7C0 7.552 0.448 8 1 8H6V13C6 13.552 6.448 14 7 14C7.552 14 8 13.552 8 13V8H13C13.552 8 14 7.552 14 7C14 6.448 13.552 6 13 6Z"
        />
@@ -124,25 +146,29 @@ const
         issues: []
       }
     ],
-  main = document.querySelector('.mainContent');
+  main = document.querySelector('.main-content');
 
 let
   isInputShown = false,
   idCounter = +localStorage.getItem('kanbanBoardIdCounter') || 0;
 
 function blockButtonsIfNoIssues(state) {
-  const addButtons = document.querySelectorAll('.taskBlock__addCard');
+  const addButtons = document.querySelectorAll('.task-block__add-button');
 
   state.forEach((element, index) => {
     if (!element.issues.length && index < state.length - 1) {
       addButtons[index + 1].classList.add('disabled');
+      addButtons[index + 1].setAttribute('disabled', true);
     }
   });
 }
 
 function blockAllAddButtons() {
-  const addButtons = document.querySelectorAll('.taskBlock__addCard');
-  addButtons.forEach(element => element.classList.add('disabled'));
+  const addButtons = document.querySelectorAll('.task-block__add-button');
+  addButtons.forEach(element => {
+    element.classList.add('disabled');
+    element.setAttribute('disabled', true);
+  });
 }
 
 function createTaskBlocks(state) {
@@ -161,7 +187,7 @@ function clickOnBacklogAddButton(event) {
     isInputShown = true;
     blockAllAddButtons();
     event.target.closest('[data-list-name = "Backlog"]').before(createTaskInput());
-    const taskInput = document.querySelector('.taskBlock__input');
+    const taskInput = document.querySelector('.task-block__input');
     taskInput.focus();
 
     taskInput.addEventListener('change', function () {
