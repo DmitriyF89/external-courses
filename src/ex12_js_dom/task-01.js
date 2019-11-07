@@ -18,12 +18,12 @@ function addClassVisible(current, list) {
 addClassVisible(current, sliderItems);
 
 slider.addEventListener('click', function () {
-  if (event.target.closest('.slider__button_nextBtn') === nextButton) {
+  if (event.target.closest('.slider__button_next-btn') === nextButton) {
     current = (current >= sliderItems.length - 1 ? 0 : ++current);
     addClassVisible(current, sliderItems);
   }
 
-  if (event.target.closest('.slider__button_prevBtn') === prevButton) {
+  if (event.target.closest('.slider__button_prev-btn') === prevButton) {
     current = (current <= 0 ? sliderItems.length - 1 : --current);
     addClassVisible(current, sliderItems);
   }
