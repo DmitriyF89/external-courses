@@ -26,6 +26,11 @@ ElectricalAppliance.prototype.plugIn = function () {
   this.isPlugged = true;
 };
 
+ElectricalAppliance.prototype.unplug = function () {
+  window.console.log(this.name + " is unplugged!");
+  this.isPlugged = false;
+};
+
 function Lamp(name, brand, power, bulbType) {
   this.name = name;
   this.brand = brand;
