@@ -1,6 +1,6 @@
 const
   accountButton = document.querySelector('.login'),
-  loginIconArrow = document.querySelector('.login__arrow-down'),
+  loginIconArrow = document.querySelector('.login__arrow'),
   mainMenu = document.querySelector('.main-content'),
   userAccMenuTemplate = `
   <div class="user-acc">
@@ -15,17 +15,17 @@ const
   </div>
   `;
 
-let isUserAccActive = false;
+let isMenuOpen = false;
 
 accountButton.addEventListener('click', function () {
-  if (!isUserAccActive) {
+  if (!isMenuOpen) {
     mainMenu.insertAdjacentHTML('beforeend', userAccMenuTemplate);
-    isUserAccActive = true;
+    isMenuOpen = true;
     loginIconArrow.classList.toggle('rotate180');
   } else {
     const userAccMenu = document.querySelector('.user-acc');
     userAccMenu.remove();
     loginIconArrow.classList.toggle('rotate180');
-    isUserAccActive = false;
+    isMenuOpen = false;
   }
 });
