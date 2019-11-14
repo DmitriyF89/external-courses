@@ -37,7 +37,6 @@ class Hangman {
 
   guess(char) {
     if (this.attempts >= 1) {
-
       if (this.letters.includes(char)) {
         this.letters.forEach((element, index) => {
           if (element === char) {

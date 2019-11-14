@@ -44,6 +44,7 @@ class Calculator {
     return new Promise((resolve) => {
       setTimeout(() => { resolve(callback(500)) }, 2000)
     })
+      .then(this.state = 500);
   }
 }
 
