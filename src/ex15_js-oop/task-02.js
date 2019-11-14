@@ -90,6 +90,11 @@ Flat.prototype.addRoom = function (room) {
   this.rooms.push(room);
 };
 
+Flat.prototype.removeRoom = function (roomName) {
+  const deletedIndex = this.rooms.findIndex((item) => item.name === roomName);
+  this.rooms.splice(deletedIndex, 1);
+};
+
 Flat.prototype.findElectrApp = function (name) {
   this.rooms.forEach(function (elem) {
     const roomName = elem.name;
