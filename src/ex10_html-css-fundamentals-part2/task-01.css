@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.circled-image img {
+  max-width: 500px;
+  clip-path: circle(35% at 50% 50%);
+}
+
+.masked-image img{
+  max-width: 500px;
+  -webkit-mask-image: url(./src/task-01/img/mask-image.png);
+  -webkit-mask-size: 290px auto;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  mask-image: url(./src/task-01/img/mask-image.png);
+}
