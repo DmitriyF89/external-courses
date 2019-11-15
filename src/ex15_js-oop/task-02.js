@@ -92,7 +92,12 @@ Flat.prototype.addRoom = function (room) {
 
 Flat.prototype.removeRoom = function (roomName) {
   const deletedIndex = this.rooms.findIndex((item) => item.name === roomName);
-  this.rooms.splice(deletedIndex, 1);
+  if (deletedIndex !== -1) {
+    this.rooms.splice(deletedIndex, 1);
+    console.log(roomName + ' was removed')
+  } else {
+    console.log('There is no ' + roomName + ' in the flat');
+  }
 };
 
 Flat.prototype.findElectrApp = function (name) {
