@@ -66,7 +66,6 @@ function createTaskList({ issues, title }) {
     });
   }
   listWrapper.append(creatAddButton(title))
-
   return listWrapper;
 }
 
@@ -104,7 +103,6 @@ function createTaskSelect(options) {
     option.dataset.taskId = element.id;
     select.append(option);
   });
-
   return select;
 }
 
@@ -261,7 +259,6 @@ function clickOnNotBacklogAddButton(event) {
         prevList = [...newPrevList];
         state[currentIndex - 1].issues = prevList;
         state[currentIndex].issues = currentList;
-
         refreshProcedure();
       })
     }
