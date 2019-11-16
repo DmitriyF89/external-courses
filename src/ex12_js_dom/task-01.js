@@ -2,29 +2,34 @@ const
   slider = document.querySelector('.slider'),
   prevButton = document.querySelector('.slider__button_prevBtn'),
   nextButton = document.querySelector('.slider__button_nextBtn'),
-  sliderItems = document.getElementsByClassName('slider__item');
+  sliderItems = document.querySelectorAll('.slider__item');
 
-let current = 0;
+let currentSliderImage = 0;
 
 function addClassVisible(current, list) {
-  list[current].classList.add('visible');
-  for (let i = 0; i < list.length; i++) {
-    if (i !== current) {
-      list[i].classList.remove('visible');
+  list.forEach((element, index) => {
+    if (index !== current) {
+      element.classList.remove('visible');
+    } else {
+      element.classList.add('visible');
     }
-  }
+  });
 }
 
-addClassVisible(current, sliderItems);
+addClassVisible(currentSliderImage, sliderItems);
 
-slider.addEventListener('click', function () {
+function clickOnSliderButton(event) {
   if (event.target.closest('.slider__button_next-btn') === nextButton) {
-    current = (current >= sliderItems.length - 1 ? 0 : ++current);
-    addClassVisible(current, sliderItems);
+    currentSliderImage = (currentSliderImage >= sliderItems.length - 1 ? 0 : ++currentSliderImage);
+    addClassVisible(currentSliderImage, sliderItems);
   }
 
   if (event.target.closest('.slider__button_prev-btn') === prevButton) {
-    current = (current <= 0 ? sliderItems.length - 1 : --current);
-    addClassVisible(current, sliderItems);
+    currentSliderImage = (currentSliderImage <= 0 ? sliderItems.length - 1 : --currentSliderImage);
+    addClassVisible(currentSliderImage, sliderItems);
   }
-});
+}
+
+slider.addEventListener('click', clickOnSliderButton);
+
+window.addEventListener('unload', () => { slider.removeEventListener('click', clickOnSliderButton) });

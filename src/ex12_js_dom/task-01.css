@@ -7,6 +7,8 @@ body {
   background-image: url(./src/task-01/img/bg.jpg);
   background-size: cover;
   padding-top: 50px;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -16,6 +18,7 @@ h1 {
 }
 
 .slider {
+  margin-top: 50px;
   position: relative;
   border: 5px solid orange;
   overflow: hidden;
@@ -32,13 +35,13 @@ h1 {
   width: 100%;
   height: 100%;
   position: absolute;
-  left: 0px;
+  left: 0;
   opacity: 0;
-  transition: all ease 1s;
+  transition: opacity ease 1s;
 }
 
 .slider__item.visible {
-  left: 0px;
+  left: 0;
 }
 
 .visible {
@@ -46,7 +49,7 @@ h1 {
 }
 
 .slider__item .slider__image {
-  max-width: 100%;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -63,7 +66,7 @@ h1 {
   position: absolute;
   top: 0;
   width: 100px;
-  height: 620px;
+  height: 100%;
   opacity: .2;
   cursor: pointer;
   z-index: 3;
@@ -76,7 +79,6 @@ h1 {
 
 .slider__button .slider__button-image {
   width: 80px;
-  height: auto;
   opacity: 1;
 }
 

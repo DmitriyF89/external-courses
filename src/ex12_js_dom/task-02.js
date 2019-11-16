@@ -17,9 +17,9 @@ const
 
 let isMenuOpen = false;
 
-accountButton.addEventListener('click', function () {
+function toggleUserMenu() {
   if (!isMenuOpen) {
-    mainMenu.insertAdjacentHTML('beforeend', userAccMenuTemplate);
+    mainMenu.insertAdjacentHTML('afterend', userAccMenuTemplate);
     isMenuOpen = true;
     loginIconArrow.classList.toggle('rotate180');
   } else {
@@ -28,4 +28,8 @@ accountButton.addEventListener('click', function () {
     loginIconArrow.classList.toggle('rotate180');
     isMenuOpen = false;
   }
-});
+}
+
+accountButton.addEventListener('click', toggleUserMenu);
+
+window.addEventListener('unload', () => { accountButton.removeEventListener('click', toggleUserMenu) });
