@@ -1,4 +1,4 @@
-function treatUserAccPanel() {
+function toggleUserMenu() {
   const
     accountButton = document.querySelector('.login'),
     loginIconArrow = document.querySelector('.login__arrow'),
@@ -18,9 +18,9 @@ function treatUserAccPanel() {
 
   let isMenuOpen = false;
 
-  accountButton.addEventListener('click', function () {
+  function clickOnUserMenu() {
     if (!isMenuOpen) {
-      mainMenu.insertAdjacentHTML('beforeend', userAccMenuTemplate);
+      mainMenu.insertAdjacentHTML('afterend', userAccMenuTemplate);
       isMenuOpen = true;
       loginIconArrow.classList.toggle('rotate180');
     } else {
@@ -29,8 +29,12 @@ function treatUserAccPanel() {
       loginIconArrow.classList.toggle('rotate180');
       isMenuOpen = false;
     }
-  });
+  }
+
+  accountButton.addEventListener('click', clickOnUserMenu);
+  return [accountButton, clickOnUserMenu];
 }
+
 
 function createBlockTitle(name) {
   const
@@ -60,20 +64,18 @@ function createTaskList({ issues, title }) {
   list.classList.add('task-block__list');
   listWrapper.append(list);
 
-  if (issues.length) {
-    issues.forEach(element => {
-      list.append(createTask(element));
-    });
-  }
-  listWrapper.append(creatAddButton(title))
+  issues.forEach(element => {
+    list.append(createTask(element));
+  });
+  listWrapper.append(creatAddButton(title));
   return listWrapper;
 }
 
-function createTask(task) {
+function createTask({ title, id }) {
   const listItem = document.createElement('li');
   listItem.classList.add('task-block__item');
-  listItem.textContent = task.title;
-  listItem.dataset.taskId = task.id;
+  listItem.textContent = title;
+  listItem.dataset.taskId = id;
   return listItem;
 }
 
@@ -121,7 +123,7 @@ function creatAddButton(title) {
   return addButton;
 }
 
-treatUserAccPanel();
+toggleUserMenu();
 
 
 const
@@ -188,7 +190,7 @@ function clickOnBacklogAddButton(event) {
     const taskInput = document.querySelector('.task-block__input');
     taskInput.focus();
 
-    taskInput.addEventListener('change', function () {
+    function changeTaskInput() {
       if (taskInput.value.trim()) {
         idCounter++;
         const newTask = {
@@ -203,15 +205,19 @@ function clickOnBacklogAddButton(event) {
         updateKanbanStorage('kanbanBoardState', state);
         updateKanbanStorage('kanbanBoardIdCounter', idCounter);
       }
-    });
+    }
+
+    taskInput.addEventListener('change', changeTaskInput);
 
     if (!taskInput.value.trim()) {
-      taskInput.addEventListener('blur', function () {
+      function removeEmptyInput() {
         taskInput.remove();
         isInputShown = false;
         createTaskBlocks(state);
         blockButtonsIfNoIssues(state);
-      });
+      }
+
+      taskInput.addEventListener('blur', removeEmptyInput);
     }
   }
 }
@@ -246,7 +252,7 @@ function clickOnNotBacklogAddButton(event) {
 
       tasksForSelect.addEventListener('blur', refreshProcedure);
 
-      tasksForSelect.addEventListener('change', function () {
+      function changeTasksForSelect() {
         const
           selectedOption = tasksForSelect.options[tasksForSelect.options.selectedIndex],
           newPrevList = prevList.filter(elem => elem.id !== selectedOption.dataset.taskId) || [],
@@ -260,7 +266,9 @@ function clickOnNotBacklogAddButton(event) {
         state[currentIndex - 1].issues = prevList;
         state[currentIndex].issues = currentList;
         refreshProcedure();
-      })
+      }
+
+      tasksForSelect.addEventListener('change', changeTasksForSelect)
     }
   }
 }
