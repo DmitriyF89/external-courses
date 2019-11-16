@@ -41,10 +41,10 @@ class Calculator {
   };
 
   fetchData(callback) {
+    const bindCallback = callback.bind(this);
     return new Promise((resolve) => {
-      setTimeout(() => { resolve(callback(500)) }, 2000)
+      setTimeout(() => { resolve(bindCallback(500)) }, 2000)
     })
-      .then(this.state = 500);
   }
 }
 
