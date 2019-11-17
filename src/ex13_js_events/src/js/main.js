@@ -4,17 +4,18 @@ function toggleUserMenu() {
     loginIconArrow = document.querySelector('.login__arrow'),
     mainMenu = document.querySelector('.main-content'),
     userAccMenuTemplate = `
-  <div class="user-acc">
-    <img class="user-acc__avatar" src="./src/img/user-acc/svg/avatar.svg" alt="avatar">
-    <div class="user-acc__info">
-      <p class="user-acc__nickname">User name</p>
-      <p class="user-acc__email">User email</p>
-    </div>
-    <button class="user-acc__accountSettings">Account settings</button>
-    <button class="user-acc__logout">Log out</button>
-    <a href="#" class="user-acc__terms">Terms of use</a>
-  </div>
-  `;
+      <div class="user-acc">
+        <img class="user-acc__avatar" src="./src/img/user-acc/svg/avatar.svg" alt="avatar">
+        <div class="user-acc__info">
+          <p class="user-acc__nickname">User name</p>
+          <p class="user-acc__email">User email</p>
+        </div>
+        <button class="user-acc__accountSettings">Account settings</button>
+        <button class="user-acc__logout">Log out</button>
+        <a href="#" class="user-acc__terms">Terms of use</a>
+      </div>
+      `
+    ;
 
   let isMenuOpen = false;
 
@@ -32,95 +33,73 @@ function toggleUserMenu() {
   }
 
   accountButton.addEventListener('click', clickOnUserMenu);
-  return [accountButton, clickOnUserMenu];
 }
 
 
 function createBlockTitle(name) {
-  const
-    titleBlock = document.createElement('div'),
-    titleBlockName = document.createElement('h3'),
-    titleButton = document.createElement('button');
-
-  titleBlock.classList.add('task-block__title');
-  titleBlockName.classList.add('task-block__name');
-  titleButton.classList.add('task-block__more-button');
-
-  titleBlockName.textContent = name;
-  titleButton.textContent = '•••';
-
-  titleBlock.append(titleBlockName);
-  titleBlock.append(titleButton);
-
-  return titleBlock;
+  return `
+  <div class="task-block__title">
+    <h3 class="task-block__name">${name}</h3>
+    <button class="task-block__more-button">•••</button>
+  </div>
+  `
 }
 
 function createTaskList({ issues, title }) {
-  const
-    list = document.createElement('ul'),
-    listWrapper = document.createElement('div');
-
-  listWrapper.classList.add('task-block__item-group');
-  list.classList.add('task-block__list');
-  listWrapper.append(list);
-
-  issues.forEach(element => {
-    list.append(createTask(element));
-  });
-  listWrapper.append(creatAddButton(title));
-  return listWrapper;
+  return `
+    <div class="task-block__item-group">
+      <ul class="task-block__list">
+      ${issues.map(elem => createTask(elem)).join('')}
+      ${creatAddButton(title)}
+      </ul>
+    </div>
+  `
 }
 
 function createTask({ title, id }) {
-  const listItem = document.createElement('li');
-  listItem.classList.add('task-block__item');
-  listItem.textContent = title;
-  listItem.dataset.taskId = id;
-  return listItem;
+  return `<li class="task-block__item" data-task-id="${id}">${title}</li>`
 }
 
 function createTaskBlock(element) {
-  const taskBlock = document.createElement('div');
-  taskBlock.classList.add('task-block');
-  taskBlock.append(createBlockTitle(element.title));
-  taskBlock.append(createTaskList(element));
-  return taskBlock;
+  return `
+    <div class="task-block">
+      ${createBlockTitle(element.title)}
+      ${createTaskList(element)}
+    </div>`
 }
 
 function createTaskInput() {
-  const taskInput = document.createElement('input');
-  taskInput.type = 'text';
-  taskInput.classList.add('task-block__input');
-  return taskInput;
+  return `
+    <input type="text" class="task-block__input">
+  `
+}
+
+function createOption(option) {
+  const { title, id } = option;
+
+  return `
+    <option data-task-id=${id}>${title}</option>
+  `
 }
 
 function createTaskSelect(options) {
-  const select = document.createElement('select');
-  select.classList.add('task-block__select');
-  select.append(document.createElement('option'));
-
-  options.forEach(element => {
-    const option = document.createElement('option');
-    option.textContent = element.title;
-    option.dataset.taskId = element.id;
-    select.append(option);
-  });
-  return select;
+  return `
+    <select class="task-block__select">
+      <option></option>
+      ${options.map(element => createOption(element)).join('')}
+    </select>
+  `
 }
 
 function creatAddButton(title) {
-  const
-    addButton = document.createElement('button');
-
-  addButton.classList.add('task-block__add-button');
-  addButton.innerHTML =
-    `<svg class="task-block__plus" width="14" height="14" viewBox="0 0 14 14">
-    <path
-      d="M13 6H8V1C8 0.448 7.552 0 7 0C6.448 0 6 0.448 6 1V6H1C0.448 6 0 6.448 0 7C0 7.552 0.448 8 1 8H6V13C6 13.552 6.448 14 7 14C7.552 14 8 13.552 8 13V8H13C13.552 8 14 7.552 14 7C14 6.448 13.552 6 13 6Z"
-       />
-  </svg> Add card`;
-  addButton.dataset.listName = `${title}`;
-  return addButton;
+  return `
+    <button class="task-block__add-button" data-list-name="${title}">
+      <svg class="task-block__plus" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+        <path d="m13 6h-5v-5c0-0.552-0.448-1-1-1s-1 0.448-1 1v5h-5c-0.552 0-1 0.448-1 1s0.448 1 1 1h5v5c0 0.552 0.448 1 1 1s1-0.448 1-1v-5h5c0.552 0 1-0.448 1-1s-0.448-1-1-1z"/>
+      </svg>
+      Add card
+    </button>
+  `
 }
 
 toggleUserMenu();
@@ -174,7 +153,7 @@ function blockAllAddButtons() {
 function createTaskBlocks(state) {
   main.innerHTML = '';
   state.forEach(element => {
-    main.append(createTaskBlock(element));
+    main.insertAdjacentHTML('beforeend', createTaskBlock(element));
   });
 }
 
@@ -186,7 +165,7 @@ function clickOnBacklogAddButton(event) {
   if (event.target.closest('[data-list-name = "Backlog"]') && !isInputShown) {
     isInputShown = true;
     blockAllAddButtons();
-    event.target.closest('[data-list-name = "Backlog"]').before(createTaskInput());
+    event.target.closest('[data-list-name = "Backlog"]').insertAdjacentHTML('beforebegin', createTaskInput());
     const taskInput = document.querySelector('.task-block__input');
     taskInput.focus();
 
@@ -247,14 +226,15 @@ function clickOnNotBacklogAddButton(event) {
       isInputShown = true;
       blockAllAddButtons();
       const tasksForSelect = createTaskSelect(state[currentIndex - 1].issues);
-      currentButton.before(tasksForSelect);
-      tasksForSelect.focus();
+      currentButton.insertAdjacentHTML('beforebegin', tasksForSelect);
+      const tasksForSelectDOMElem = document.querySelector('.task-block__select');
+      tasksForSelectDOMElem.focus();
 
-      tasksForSelect.addEventListener('blur', refreshProcedure);
+      tasksForSelectDOMElem.addEventListener('blur', refreshProcedure);
 
       function changeTasksForSelect() {
         const
-          selectedOption = tasksForSelect.options[tasksForSelect.options.selectedIndex],
+          selectedOption = tasksForSelectDOMElem.options[tasksForSelectDOMElem.options.selectedIndex],
           newPrevList = prevList.filter(elem => elem.id !== selectedOption.dataset.taskId) || [],
           transferItem = {
             title: selectedOption.value,
@@ -268,7 +248,7 @@ function clickOnNotBacklogAddButton(event) {
         refreshProcedure();
       }
 
-      tasksForSelect.addEventListener('change', changeTasksForSelect)
+      tasksForSelectDOMElem.addEventListener('change', changeTasksForSelect)
     }
   }
 }

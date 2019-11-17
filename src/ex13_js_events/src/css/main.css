@@ -237,6 +237,8 @@ body {
 
 .task-block__plus {
   fill: #5e6c84;
+  width: 14px;
+  height: 14px;
 }
 
 .task-block__input {
