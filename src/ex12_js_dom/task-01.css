@@ -1,0 +1,91 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: orange;
+  background-image: url(./src/task-01/img/bg.jpg);
+  background-size: cover;
+  padding-top: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight: normal;
+  margin: 20px 0;
+  font-size: 40px;
+}
+
+.slider {
+  margin-top: 50px;
+  position: relative;
+  border: 5px solid orange;
+  overflow: hidden;
+  background-color: #000;
+  box-sizing: border-box;
+}
+
+.slider__item-group {
+  width: 920px;
+  height: 620px;
+}
+
+.slider__item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: opacity ease 1s;
+}
+
+.slider__item.visible {
+  left: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.slider__item .slider__image {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__item.visible {
+  display: block;
+}
+
+.slider__button {
+  background: gray;
+  border: none;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  opacity: .2;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.slider__button:hover,
+.slider__button:focus {
+  opacity: .7;
+}
+
+.slider__button .slider__button-image {
+  width: 80px;
+  opacity: 1;
+}
+
+.slider__button_prev-btn .slider__button-image {
+  transform: scale(-1, 1);
+}
+
+.slider__button_next-btn {
+  right: 0;
+}
