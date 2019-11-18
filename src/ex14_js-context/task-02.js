@@ -26,7 +26,6 @@ Hangman.prototype.startAgain = function (word) {
   this.attempts = 6;
   this.wrongGuesses = [];
   this.count = 0;
-
   return this;
 }
 
