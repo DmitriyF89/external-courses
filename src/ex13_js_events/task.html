@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./src/css/main.css">
+  <title>Kanban board</title>
+</head>
+
+<body>
+  <div class="kanban">
+    <header class="header">
+      <div class="header__intro">
+        <div class="header__logo">
+          <img src="./src/img/header/svg/logo.svg" alt="logo">
+        </div>
+        <h2 class="header__title">Awesome kanban board</h2>
+      </div>
+      <div class="header__user-menu">
+        <button class="new-list-button">
+          <img src="./src/img/header/svg/new-list-button.svg" alt="new list" class="new-list-button__image">
+          Create new list
+        </button>
+        <button class="login">
+          <img src="./src/img/header/svg/avatar.svg" alt="avatar">
+          <img class="login__arrow" src="./src/img/header/svg/arrow.svg" alt="arrow">
+        </button>
+      </div>
+    </header>
+    <div class="main-content-wrapper">
+      <div class="main-content"></div>
+    </div>
+    <footer class="footer">
+      <div class="task-info">
+        <p class="task-info__text">Active tasks: <span>&lt;N&gt;</span></p>
+        <p class="task-info__text">Finished tasks: <span>&lt;M&gt;</span></p>
+      </div>
+      <div class="author">
+        <p class="author__text">Kanban board by <span>Fedorov Dmitry</span>, <span> 2019</span>
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script src="./src/js/main.js"></script>
+</body>
+
+</html>
