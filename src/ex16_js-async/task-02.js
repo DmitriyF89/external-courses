@@ -1,21 +1,23 @@
-const
-  input = document.querySelector('.input');
+const input = document.querySelector('.input');
 
-function debounce(event, elem, delay) {
-  if (event.key.length === 1) {
-    if (!elem.dataset.isDebounce || elem.dataset.isDebounce === 'false') {
-      elem.setAttribute('data-is-debounce', true);
-      setTimeout(() => {
-        elem.setAttribute('data-is-debounce', false);
-      }, delay)
-    } else {
+function debounce(callback, delay) {
+  let isCallbackInvoked = false;
+  return function (event) {
+    if (isCallbackInvoked) {
       event.preventDefault();
+      return;
     }
-  } else {
-    return
+
+    callback.call(this, event);
+    isCallbackInvoked = true;
+    setTimeout(() => {
+      isCallbackInvoked = false;
+    }, delay)
   }
 }
 
-input.addEventListener('keydown', (event) => {
-  debounce(event, input, 1000);
-});
+function handleInputKeydown() {
+  // code
+}
+
+input.addEventListener('keydown', debounce(handleInputKeydown, 1500));

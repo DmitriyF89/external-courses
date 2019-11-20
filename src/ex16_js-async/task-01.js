@@ -7,35 +7,33 @@ function makeAsyncRequest(url, options = { method: 'GET', body: null, headers: n
     xhr.open(method, url);
 
     if (headers) {
-      for (let key in headers) {
-        if (headers.hasOwnProperty(key)) {
-          xhr.setRequestHeader(key, headers[key])
-        }
-      }
+      Object.entries(headers)
+        .forEach(elem => xhr.setRequestHeader(elem[0], elem[1]));
     }
+
+    xhr.responseType = 'json';
 
     class ObjectResponse {
       constructor(response, options) {
         this.response = response;
         this.status = options.status;
-        this.ok = this.status >= 200 && this.status < 300;
+        this.ok = this.status === 200;
         this.statusText = options.statusText;
         this.url = options.url;
       }
 
-      json() {
-        const transformedResponse = JSON.parse(this.response);
-        return new Promise(resolve => resolve(transformedResponse));
+      getJson() {
+        return Promise.resolve(this.response);
       }
     }
 
     xhr.onload = () => {
-      const init = {
+      const options = {
         status: xhr.status,
         statusText: xhr.statusText,
         url: xhr.responseURL
       }
-      resolve(new ObjectResponse(xhr.response, init));
+      resolve(new ObjectResponse(xhr.response, options));
     }
 
     xhr.onerror = () => {
