@@ -2,13 +2,13 @@ const input = document.querySelector('.input');
 
 function debounce(callback, delay) {
   let isCallbackInvoked = false;
-  return function (event) {
+  return function () {
     if (isCallbackInvoked) {
       event.preventDefault();
       return;
     }
 
-    callback.call(this, event);
+    callback.call(this);
     isCallbackInvoked = true;
     setTimeout(() => {
       isCallbackInvoked = false;
