@@ -1,0 +1,368 @@
+@import './normalize.css';
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+}
+
+body {
+ margin: 0;
+ padding: 0;
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+}
+ 
+ h2, h3, img {
+   margin: 0;
+   padding: 0;
+ }
+
+.kanban {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content-wrapper {
+  background-color:#0079bf;
+  padding-right: 20px;
+}
+
+.main-content {
+  width: calc(100% - 20px);
+  background-color:#0079bf;
+  padding: 20px 0 20px 0;
+  margin-left: 20px;
+  box-sizing: border-box;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  height: calc(100vh - 55px - 57px);
+  overflow-x: auto;
+}
+
+.container {
+  overflow-x: auto;
+  background-color:#0079bf;
+  padding-right: 24px;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #cbcbcb;
+}
+
+.header {
+  width: 100%;
+  height: 55px;
+  margin: 0 auto;
+  background-color: #0067a3;
+  box-sizing: border-box;
+  color: #fff;
+  padding: 5px 6px 5px 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__intro {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  margin-right: 8px;
+  display: flex;
+}
+
+.header__title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 33px;
+  margin: 0;
+  padding: 0;
+}
+
+.header__user-menu {
+  display: flex;
+  align-items: center;
+}
+
+.new-list-button {
+  width: 181px;
+  height: 33px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-right: 49px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.login__arrow {
+  transition: transform 0.3s ease;
+}
+
+.new-list-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.new-list-button .new-list-button__image {
+  margin-right: 13px;
+}
+
+.task-block {
+  color: #000000;
+  display: flex;
+  flex-basis: 282px;
+  flex-shrink: 0;
+  flex-direction: column;
+  overflow-y: auto;
+  background: #ebecf0;
+  border-radius: 10px;
+  padding: 12px 0 12px 8px;
+  box-sizing: border-box;
+  max-height: 100%;
+}
+
+.task-block:not(:last-of-type) {
+  margin-right: 24px;
+}
+
+.task-block__title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.task-block__name {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  width: 232px;
+}
+
+.task-block__more-button {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  width: 20px;
+  height: 18px;
+  display: table-cell;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 18px;
+}
+
+.task-block__item-group {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-right: 8px;
+}
+
+.task-block__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.task-block__item {
+  margin-bottom: 15px;
+  margin-right: 12px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 7px 8px;
+  box-sizing: border-box;
+}
+
+.task-block__add-button {
+  color: #5e6c84;
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.task-block__add-button:not(.disabled):hover {
+  color: #000;
+  font-weight: bold;
+}
+
+.task-block__add-button:not(.disabled):hover .task-block__plus{
+  fill: #000;
+}
+
+.disabled {
+  cursor: default;
+  color: #5e6c8471;
+  outline: none;
+}
+
+.disabled .task-block__plus{
+  fill: #5e6c8471;
+}
+
+.task-block__plus {
+  fill: #5e6c84;
+  width: 14px;
+  height: 14px;
+}
+
+.task-block__input {
+  margin-bottom: 15px;
+  background: #fff;
+  border-radius: 5px;
+  border: 3px solid #0079bf;
+  padding: 7px 8px;
+  box-sizing: border-box;
+  width: calc(100% - 12px);
+  font-size: 1rem;
+  line-height: 21px;
+}
+
+.task-block__select {
+  margin-bottom: 15px;
+  background: #fff;
+  border-radius: 5px;
+  border: 3px solid #0079bf;
+  padding: 7px 8px;
+  box-sizing: border-box;
+  width: calc(100% - 12px);
+  font-size: 1rem;
+  line-height: 21px;
+}
+
+.footer {
+  width: 100%;
+  height: 57px;
+  background-color: #0067a3;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  padding: 17px 24px 17px 24px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.task-info {
+  display: flex;
+}
+
+.task-info__text,
+.author__text {
+  margin: 0;
+  padding: 0;
+}
+
+.task-info__text:first-child {
+  margin-right: 36px;
+}
+
+.user-acc {
+  position: fixed;
+  top: 55px;
+  right: 0;
+  z-index: 2;
+  background-color: #ebecf0;
+  box-sizing: border-box;
+  padding: 20px;
+  color: #000;
+  border-radius: 8px;
+  width: 356px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: -5px 5px 15px 5px rgba(0, 0, 0, 0.185);
+}
+
+.user-acc__avatar {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow:  0 0 10px rgba(0,0,0,.2);
+}
+
+.user-acc__info {
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 5px 10px;
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+  margin: 35px 0;
+}
+
+.user-acc__nickname {
+  margin: 0;
+  font-weight: 600;
+}
+
+.user-acc__email {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.user-acc__accountSettings,
+.user-acc__logout {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  padding: 10px 25px;
+  cursor: pointer;
+}
+
+.user-acc__accountSettings:hover,
+.user-acc__logout:hover {
+  background-color: #cbcbcb;
+}
+
+.user-acc__terms {
+  font-size: 0.7rem;
+  text-decoration: none;
+  color: #5f6368;
+  padding: 5px 10px;
+}
+
+.user-acc__terms:hover {
+ background-color: rgba(185, 185, 185, 0.2);
+}
+
+.rotate180 {
+  transition: transform 0.3s ease;
+  transform: rotate(180deg);
+} 
