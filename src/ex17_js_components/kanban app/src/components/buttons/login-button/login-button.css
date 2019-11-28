@@ -1,0 +1,13 @@
+.login {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.login__arrow {
+  transition: transform 0.3s ease;
+}

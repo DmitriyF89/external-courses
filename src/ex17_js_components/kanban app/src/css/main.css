@@ -1,0 +1,38 @@
+@import './normalize.css';
+@import '../components/buttons/add-card-button/add-card-button.css';
+@import '../components/buttons/login-button/login-button.css';
+@import '../components/buttons/new-list-button/new-list-button.css';
+@import '../components/footer/footer.css';
+@import '../components/header/header.css';
+@import '../components/main-content/main-content.css';
+@import '../components/task-block/task-block.css';
+@import '../components/user-menu/user-menu.css';
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+}
+
+body {
+ margin: 0;
+ padding: 0;
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+}
+ 
+ h2, h3, img {
+   margin: 0;
+   padding: 0;
+ }
