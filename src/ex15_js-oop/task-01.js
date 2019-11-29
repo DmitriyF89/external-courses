@@ -18,13 +18,13 @@ class Present {
   }
 
   searchCandy(name) {
-    let indexInSweets;
+    let candyPosition;
     const hasCandy = this.sweets.find((item, index) => {
-      indexInSweets = index;
+      candyPosition = index;
       return item.type.name.toLowerCase() === name.toLowerCase()
     });
     if (hasCandy) {
-      console.log('В подарке есть ' + this.sweets[indexInSweets].weight +
+      console.log('В подарке есть ' + this.sweets[candyPosition].weight +
         ' грамм конфет ' + '\"' + name + '\"' + ' !');
     } else {
       console.log('В подарке нет конфет ' + name + '.');
@@ -52,30 +52,30 @@ class Present {
 }
 
 class Candies {
-  constructor(brand, name, madeOf) {
+  constructor(brand, name, ingredients) {
     this.brand = brand;
     this.name = name;
-    this.madeOf = madeOf;
+    this.ingredients = ingredients;
   }
 }
 
 class ChocolateCandies extends Candies {
-  constructor(brand, name, madeOf, filling) {
-    super(brand, name, madeOf);
+  constructor(brand, name, ingredients, filling) {
+    super(brand, name, ingredients);
     this.filling = filling;
   }
 }
 
 class CaramelCandies extends Candies {
-  constructor(brand, name, madeOf, filling) {
-    super(brand, name, madeOf);
+  constructor(brand, name, ingredients, filling) {
+    super(brand, name, ingredients);
     this.filling = filling;
   }
 }
 
 class Toffee extends Candies {
-  constructor(brand, name, madeOf, consistence) {
-    super(brand, name, madeOf);
+  constructor(brand, name, ingredients, consistence) {
+    super(brand, name, ingredients);
     this.consistence = consistence;
   }
 }

@@ -2,19 +2,6 @@
     browser, this, white
 */
 
-/*global
-    Computer, ElectricalAppliance, Flat, Fridge, Lamp, Room, TelevisionSet,
-    WashingMachine, bedRoom, chandlier1, chandlier2, chandlier3, flat, fridge,
-    homePC, kitchen, livingRoom, tableLamp, tv, washingMachine, window
-*/
-
-/*property
-    addElectrApp, addRoom, brand, bulbType, calcTotalPower, console, electrApp,
-    findElectrApp, forEach, functionality, furniture, hasCoolFrost, hasDryer,
-    hasSmart, includes, isPlugged, log, name, plugIn, power, prototype, push,
-    rooms, type
-*/
-
 function ElectricalAppliance(name, power) {
   this.name = name;
   this.power = power;
@@ -94,18 +81,18 @@ Flat.prototype.removeRoom = function (roomName) {
   const deletedIndex = this.rooms.findIndex((item) => item.name === roomName);
   if (deletedIndex !== -1) {
     this.rooms.splice(deletedIndex, 1);
-    console.log(roomName + ' was removed')
+    window.console.log(roomName + ' was removed');
   } else {
-    console.log('There is no ' + roomName + ' in the flat');
+    window.console.log('There is no ' + roomName + ' in the flat');
   }
 };
 
-Flat.prototype.findElectrApp = function (name) {
-  this.rooms.forEach(function (elem) {
-    const roomName = elem.name;
-    elem.electrApp.forEach(function (elem) {
-      if (elem.name.includes(name)) {
-        if (elem.isPlugged) {
+Flat.prototype.findElectroAppliance = function (name) {
+  this.rooms.forEach(function (room) {
+    const roomName = room.name;
+    room.electroAppliance.forEach(function (appliance) {
+      if (appliance.name.includes(name)) {
+        if (appliance.isPlugged) {
           window.console.log(name + " in " + roomName + " is plugged!");
         } else {
           window.console.log(name + " in " + roomName + " is not plugged!");
@@ -116,28 +103,28 @@ Flat.prototype.findElectrApp = function (name) {
 };
 
 Flat.prototype.calcTotalPower = function () {
-  let totPower = 0;
+  let totalPower = 0;
 
   this.rooms.forEach(function (elem) {
-    elem.electrApp.forEach(function (elem) {
+    elem.electroAppliance.forEach(function (elem) {
       if (elem.isPlugged) {
-        totPower += elem.power;
+        totalPower += elem.power;
       }
     });
   });
 
   window.console.log
-    ("Total power of the plugged electrical appliances " + totPower + "W");
+    ("Total power of the plugged electrical appliances " + totalPower + "W");
 };
 
-function Room(name, electrApp, furniture) {
+function Room(name, electroAppliance, furniture) {
   this.name = name;
-  this.electrApp = electrApp || [];
+  this.electroAppliance = electroAppliance || [];
   this.furniture = furniture || [];
 }
 
-Room.prototype.addElectrApp = function (appliance) {
-  this.electrApp.push(appliance);
+Room.prototype.addElectroAppliance = function (appliance) {
+  this.electroAppliance.push(appliance);
 };
 
 const tableLamp = new Lamp("Table lamp", "Xiaomi", 5, "LED");
@@ -153,14 +140,14 @@ const kitchen = new Room("Kitchen");
 const bedRoom = new Room("Bedroom");
 const flat = new Flat();
 
-livingRoom.addElectrApp(chandlier1);
-livingRoom.addElectrApp(tv);
-kitchen.addElectrApp(fridge);
-kitchen.addElectrApp(chandlier2);
-kitchen.addElectrApp(washingMachine);
-bedRoom.addElectrApp(tableLamp);
-bedRoom.addElectrApp(homePC);
-bedRoom.addElectrApp(chandlier3);
+livingRoom.addElectroAppliance(chandlier1);
+livingRoom.addElectroAppliance(tv);
+kitchen.addElectroAppliance(fridge);
+kitchen.addElectroAppliance(chandlier2);
+kitchen.addElectroAppliance(washingMachine);
+bedRoom.addElectroAppliance(tableLamp);
+bedRoom.addElectroAppliance(homePC);
+bedRoom.addElectroAppliance(chandlier3);
 
 flat.addRoom(livingRoom);
 flat.addRoom(kitchen);
@@ -172,4 +159,4 @@ homePC.plugIn();
 tableLamp.plugIn();
 
 flat.calcTotalPower();
-flat.findElectrApp("Plasma TV");
+flat.findElectroAppliance("Plasma TV");
