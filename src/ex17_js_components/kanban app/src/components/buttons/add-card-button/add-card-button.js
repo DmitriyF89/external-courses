@@ -1,4 +1,4 @@
-export function createAddCardButtonTemplate(title) { // eslint-disable-line
+export function createAddCardButtonTemplate(title) {
   return `
     <button class="add-button" data-list-name="${title}">
       <svg class="add-button__plus" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">

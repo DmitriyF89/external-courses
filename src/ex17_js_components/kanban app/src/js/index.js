@@ -1,6 +1,6 @@
 import { createHeaderTemplate } from '../components/header/header.js';
 import { createFooterTemplate } from '../components/footer/footer.js';
-import { toggleUserMenu } from '../components/user-menu/user-menu.js';
+import { toggleUserMenu } from '../components/buttons/login-button/login-button.js';
 import { createTaskSelect, createTaskInput } from '../components/task-block/task-block.js';
 import { createMainContentTemplate } from '../components/main-content/main-content.js';
 
@@ -45,7 +45,7 @@ createAppTemplate(state);
 toggleUserMenu();
 
 function blockButtonsIfNoIssues(state) {
-  const addButtons = document.querySelectorAll('.task-block__add-button');
+  const addButtons = document.querySelectorAll('.add-button');
 
   state.forEach((element, index) => {
     if (!element.issues.length && index < state.length - 1) {
@@ -58,7 +58,7 @@ function blockButtonsIfNoIssues(state) {
 blockButtonsIfNoIssues(state);
 
 function blockAllAddButtons() {
-  const addButtons = document.querySelectorAll('.task-block__add-button');
+  const addButtons = document.querySelectorAll('.add-button');
   if (isInputShown) {
     addButtons.forEach(element => {
       element.classList.add('disabled');
