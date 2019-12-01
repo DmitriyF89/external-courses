@@ -1,0 +1,89 @@
+.login {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.login__arrow {
+  transition: transform 0.3s ease;
+}
+
+.user-acc {
+  position: fixed;
+  top: 55px;
+  right: 0;
+  z-index: 2;
+  background-color: #ebecf0;
+  box-sizing: border-box;
+  padding: 20px;
+  color: #000;
+  border-radius: 8px;
+  width: 356px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: -5px 5px 15px 5px rgba(0, 0, 0, 0.185);
+}
+
+.user-acc__avatar {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow:  0 0 10px rgba(0,0,0,.2);
+}
+
+.user-acc__info {
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 5px 10px;
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+  margin: 35px 0;
+}
+
+.user-acc__nickname {
+  margin: 0;
+  font-weight: 600;
+}
+
+.user-acc__email {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.user-acc__accountSettings,
+.user-acc__logout {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  padding: 10px 25px;
+  cursor: pointer;
+}
+
+.user-acc__accountSettings:hover,
+.user-acc__logout:hover {
+  background-color: #cbcbcb;
+}
+
+.user-acc__terms {
+  font-size: 0.7rem;
+  text-decoration: none;
+  color: #5f6368;
+  padding: 5px 10px;
+}
+
+.user-acc__terms:hover {
+ background-color: rgba(185, 185, 185, 0.2);
+}
+
+.rotate180 {
+  transition: transform 0.3s ease;
+  transform: rotate(180deg);
+} 
