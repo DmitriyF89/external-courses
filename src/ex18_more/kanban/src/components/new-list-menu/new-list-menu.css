@@ -1,0 +1,32 @@
+.new-list-menu {
+  color: #000000;
+  display: flex;
+  flex-basis: 282px;
+  flex-shrink: 0;
+  flex-direction: column;
+  overflow-y: auto;
+  background: #ebecf0;
+  border-radius: 10px;
+  padding: 12px 0 12px 8px;
+  box-sizing: border-box;
+  max-height: 100%;
+  margin-right: 24px;
+}
+
+.new-list-menu__title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-list-menu__input {
+  margin-bottom: 15px;
+  background: #fff;
+  border-radius: 5px;
+  border: 3px solid #0079bf;
+  padding: 7px 8px;
+  box-sizing: border-box;
+  width: calc(100% - 24px);
+  margin-right: 30px;
+  font-size: 1rem;
+  line-height: 21px;
+}

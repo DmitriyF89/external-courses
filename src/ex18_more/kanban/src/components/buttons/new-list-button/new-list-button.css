@@ -1,0 +1,14 @@
+.new-list-button {
+  width: 181px;
+  height: 33px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.new-list-button .new-list-button__image {
+  margin-right: 13px;
+}

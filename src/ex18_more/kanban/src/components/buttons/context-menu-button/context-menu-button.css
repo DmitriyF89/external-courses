@@ -1,0 +1,68 @@
+.context-button-wrapper {
+  position: relative;
+}
+
+.context-menu-button {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  width: 20px;
+  height: 18px;
+  display: table-cell;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 18px;
+
+}
+
+.context-menu-button__options {
+  background-color: #fff;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  width: 170px;
+  box-shadow: 2px 2px 10px black;
+}
+
+.context-menu-button__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.context-menu-button__item {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.context-menu-button__item:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+
+.context-menu-button__sub-button {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+  background: none;
+  border: none;
+  height: 30px;
+  width: 100%;
+  cursor: pointer;
+  text-align: start;
+  padding-left: 15px;
+  transition: 0.3s ease;
+}
+
+.context-menu-button__sub-button:hover {
+  background: #0067a3;
+  color: #fff;
+}
+
+.context-menu-button__input {
+  width: 150px;
+}
